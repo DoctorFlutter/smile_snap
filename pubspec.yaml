@@ -1,7 +1,9 @@
 name: smile_snap
-description: "A new Flutter package project."
+description: "A Flutter AI package that automatically captures photos using facial gestures like Smile, Double Blink, and Wink."
 version: 0.0.1
-homepage:
+homepage: https://github.com/DoctorFlutter/smile_snap
+repository: https://github.com/DoctorFlutter/smile_snap
+issue_tracker: https://github.com/DoctorFlutter/smile_snap/issues
 
 environment:
   sdk: ^3.10.4
