@@ -75,9 +75,6 @@ class FaceDetectorService {
       case SnapTrigger.blinkRight:
       
         return rightOpen < 0.4 && leftOpen > 0.5;
-
-      default:
-        return false;
     }
   }
 

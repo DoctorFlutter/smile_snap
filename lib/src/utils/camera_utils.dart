@@ -83,7 +83,5 @@ class CameraUtils {
       case ImageFormatGroup.jpeg:
         return null;
     }
-    
-    return null;
   }
 }
