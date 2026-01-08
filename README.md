@@ -1,39 +1,56 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Smile Snap 📸
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+A Flutter package that uses AI (Google ML Kit) to automatically capture photos when a specific facial gesture is detected.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+Perfect for selfies, accessibility apps, and hands-free operations.
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+## Features ✨
 
-## Features
+* **Smile Detection:** Automatically snaps a photo when the user smiles.
+* **Blink Detection:** Trigger capture with a double blink.
+* **Wink Detection:** Trigger with a left or right wink.
+* **Privacy First:** All ML processing happens offline on the device.
+* **Highly Customizable:** Adjustable thresholds and full UI control.
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+## Installation 💻
 
-## Getting started
+Add this to your package's `pubspec.yaml` file:
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+```yaml
+dependencies:
+  smile_snap: ^0.0.1
+```
+## Setup ⚙️
 
-## Usage
+### Android
+Update your `android/app/build.gradle` file to ensure the minimum SDK version is at least 21 (required by ML Kit).
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
+```gradle
+defaultConfig {
+    // ...
+    minSdkVersion 21 
+    // ...
+}
+```
+### iOS
+Add the following permission to your ios/Runner/Info.plist file so the app can access the camera.
+```xml
+<key>NSCameraUsageDescription</key>
+<string>We need camera access to detect facial gestures and take photos.</string>
 ```
 
-## Additional information
+## Usage 🛠️
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+Import the package and use the `SmileSnap` widget in your UI.
+
+```dart
+import 'package:smile_snap/smile_snap.dart';
+// ... inside your widget tree
+SmileSnap(
+  trigger: SnapTrigger.smile, // Choose: smile, doubleBlink, blinkLeft...
+  onCapture: (File image) {
+    // Handle the captured image file here
+    print("Photo taken at ${image.path}");
+  },
+)
+```
