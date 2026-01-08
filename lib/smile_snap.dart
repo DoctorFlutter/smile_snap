@@ -1,5 +1,3 @@
-library smile_snap;
-
 // Export the main widget so users can use SmileSnap(...)
 export 'src/widgets/smile_snap_camera.dart';
 
