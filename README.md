@@ -9,7 +9,6 @@ Perfect for selfies, accessibility apps, and hands-free operations.
 * **Smile Detection:** Automatically snaps a photo when the user smiles.
 * **Blink Detection:** Trigger capture with a double blink.
 * **Wink Detection:** Trigger with a left or right wink.
-* **Privacy First:** All ML processing happens offline on the device.
 * **Highly Customizable:** Adjustable thresholds and full UI control.
 
 ## Installation 💻
